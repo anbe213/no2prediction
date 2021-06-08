@@ -21,8 +21,6 @@ train.head()
 
 train.shape
 
-train.head()
-
 test = pd.read_csv("../input/no2dataset/test.csv")
 
 gdf = gpd.GeoDataFrame(train, geometry = gpd.points_from_xy(train.lon, train.lat))
@@ -60,7 +58,7 @@ for i in range(1, len(train_num.columns), 5):
                 x_vars = train_num.columns[i:i+5],
                 y_vars = ["NO2"])
 
-x_train=train[['pblh', 'press', 'temp', 'relative_humidity','windspeed', 'urban', 'crop', 'water', 'forest', 'sentiment5P']]
+x_train=train[['pblh', 'pressure', 'temperature', 'relative_humidity','wind_speed', 'dpt', 'road_density', 'population_density', 'sentiment5P']]
 
 y_train = train["NO2"]
 
